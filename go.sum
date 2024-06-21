@@ -6,4 +6,6 @@ github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/reatang/go-json-datetime v0.2.0 h1:1mnDPikAI0EOMo6SlK45i7ibaT3cD9v3Y7pvxH0KOFs=
 github.com/reatang/go-json-datetime v0.2.0/go.mod h1:u1wGGUqQmYAwBWAlucsk6SQhPcT2CfBMH/l/ykeW1xg=
+github.com/reatang/go-json-datetime v0.2.1 h1:AHj2UrBhc0duhT7coGOImtJrzs9VBqQPupAcyWwewwI=
+github.com/reatang/go-json-datetime v0.2.1/go.mod h1:u1wGGUqQmYAwBWAlucsk6SQhPcT2CfBMH/l/ykeW1xg=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=

@@ -7,4 +7,4 @@ require (
 	github.com/pkg/errors v0.9.1
 )
 
-require github.com/reatang/go-json-datetime v0.2.0
+require github.com/reatang/go-json-datetime v0.2.1
