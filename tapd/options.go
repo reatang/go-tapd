@@ -6,7 +6,7 @@ type Options struct {
 
 	endpoint string
 
-	workspaceID string
+	workspaceID int
 }
 
 type Option func(*Options)
@@ -24,7 +24,7 @@ func WithEndpoint(endpoint string) Option {
 	}
 }
 
-func WithWorkspaceID(workspaceID string) Option {
+func WithWorkspaceID(workspaceID int) Option {
 	return func(o *Options) {
 		o.workspaceID = workspaceID
 	}
