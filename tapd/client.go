@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/google/go-querystring/query"
 	"github.com/pkg/errors"
@@ -56,7 +57,7 @@ func (c *Client) newRequest(ctx context.Context, method string, uri string) *htt
 }
 
 func (c *Client) newRequestWithBody(ctx context.Context, method string, uri string, body io.ReadCloser) *http.Request {
-	req, _ := http.NewRequestWithContext(ctx, method, c.opts.endpoint+uri, body)
+	req, _ := http.NewRequestWithContext(ctx, method, c.opts.endpoint+"/"+strings.TrimLeft(uri, "/"), body)
 
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", "go-tapd/"+Version())
