@@ -67,7 +67,7 @@ type GetBugsRequest struct {
 	OriginPhase    string `json:"originphase,omitempty" url:"originphase,omitempty"`           // 发现阶段
 	SourcePhase    string `json:"sourcephase,omitempty" url:"sourcephase,omitempty"`           // 引入阶段
 	Resolution     string `json:"resolution,omitempty" url:"resolution,omitempty"`             // 解决方法
-	Estimate       int    `json:"estimate,omitempty" url:"estimate,omitempty"`                 // 预计解决时间
+	Estimate       any    `json:"estimate,omitempty" url:"estimate,omitempty"`                 // 预计解决时间
 	Description    string `json:"description,omitempty" url:"description,omitempty"`           // 详细描述
 }
 

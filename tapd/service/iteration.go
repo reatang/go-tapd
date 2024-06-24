@@ -25,8 +25,8 @@ type GetIterationsRequest struct {
 	Description    string `json:"description,omitempty" url:"description,omitempty"`           // 详细描述
 	StartDate      string `json:"startdate,omitempty" url:"startdate,omitempty"`               // 开始时间，支持时间查询
 	EndDate        string `json:"enddate,omitempty" url:"enddate,omitempty"`                   // 结束时间，支持时间查询
-	WorkItemTypeID int    `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"` // 迭代类别
-	PlanAppID      int    `json:"plan_app_id,omitempty" url:"plan_app_id,omitempty"`           // 计划应用ID
+	WorkItemTypeID any    `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"` // 迭代类别
+	PlanAppID      any    `json:"plan_app_id,omitempty" url:"plan_app_id,omitempty"`           // 计划应用ID
 	Status         string `json:"status,omitempty" url:"status,omitempty"`                     // 状态（系统状态open/done，自定义状态可传中文）
 	Creator        string `json:"creator,omitempty" url:"creator,omitempty"`                   // 创建人
 	Completed      string `json:"completed,omitempty" url:"completed,omitempty"`               // 完成时间

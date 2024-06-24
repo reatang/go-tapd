@@ -22,17 +22,17 @@ type GetStoriesRequest struct {
 	ID              any     `json:"id,omitempty" url:"id,omitempty"`
 	Name            string  `json:"name,omitempty" url:"name,omitempty"`
 	Priority        string  `json:"priority,omitempty" url:"priority,omitempty"`
-	BusinessValue   int     `json:"business_value,omitempty" url:"business_value,omitempty"`
+	BusinessValue   any     `json:"business_value,omitempty" url:"business_value,omitempty"`
 	Status          string  `json:"status,omitempty" url:"status,omitempty"`
 	VStatus         string  `json:"v_status,omitempty" url:"v_status,omitempty"`
 	WithVStatus     string  `json:"with_v_status,omitempty" url:"with_v_status,omitempty"`
 	Label           string  `json:"label,omitempty" url:"label,omitempty"`
-	WorkitemTypeID  string  `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"`
+	WorkitemTypeID  any     `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"`
 	Version         string  `json:"version,omitempty" url:"version,omitempty"`
 	Module          string  `json:"module,omitempty" url:"module,omitempty"`
 	Feature         string  `json:"feature,omitempty" url:"feature,omitempty"`
 	TestFocus       string  `json:"test_focus,omitempty" url:"test_focus,omitempty"`
-	Size            int     `json:"size,omitempty" url:"size,omitempty"`
+	Size            any     `json:"size,omitempty" url:"size,omitempty"`
 	Owner           string  `json:"owner,omitempty" url:"owner,omitempty"`
 	CC              string  `json:"cc,omitempty" url:"cc,omitempty"`
 	Creator         string  `json:"creator,omitempty" url:"creator,omitempty"`
@@ -40,17 +40,17 @@ type GetStoriesRequest struct {
 	Begin           string  `json:"begin,omitempty" url:"begin,omitempty"`
 	Due             string  `json:"due,omitempty" url:"due,omitempty"`
 	Completed       string  `json:"completed,omitempty" url:"completed,omitempty"`
-	IterationID     string  `json:"iteration_id,omitempty" url:"iteration_id,omitempty"`
+	IterationID     any     `json:"iteration_id,omitempty" url:"iteration_id,omitempty"`
 	Effort          string  `json:"effort,omitempty" url:"effort,omitempty"`
 	EffortCompleted string  `json:"effort_completed,omitempty" url:"effort_completed,omitempty"`
 	Remain          float64 `json:"remain,omitempty" url:"remain,omitempty"`
 	Exceed          float64 `json:"exceed,omitempty" url:"exceed,omitempty"`
-	CategoryID      uint64  `json:"category_id,omitempty" url:"category_id,omitempty"`
-	ReleaseID       uint64  `json:"release_id,omitempty" url:"release_id,omitempty"`
+	CategoryID      any     `json:"category_id,omitempty" url:"category_id,omitempty"`
+	ReleaseID       any     `json:"release_id,omitempty" url:"release_id,omitempty"`
 	Source          string  `json:"source,omitempty" url:"source,omitempty"`
 	Type            string  `json:"type,omitempty" url:"type,omitempty"`
-	ParentID        uint64  `json:"parent_id,omitempty" url:"parent_id,omitempty"`
-	ChildrenID      string  `json:"children_id,omitempty" url:"children_id,omitempty"`
+	ParentID        any     `json:"parent_id,omitempty" url:"parent_id,omitempty"`
+	ChildrenID      any     `json:"children_id,omitempty" url:"children_id,omitempty"`
 	Description     string  `json:"description,omitempty" url:"description,omitempty"`
 }
 
