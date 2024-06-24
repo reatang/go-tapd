@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"strings"
 	"time"
 )
 
@@ -44,6 +45,10 @@ type QueryFields struct {
 	Page   int    `json:"page,omitempty" url:"page,omitempty"`     // 返回当前数量限制下第N页的数据，默认为1（第一页）
 	Order  string `json:"order,omitempty" url:"order,omitempty"`   // 排序规则，规则：字段名 ASC或者DESC，然后 urlencode
 	Fields string `json:"fields,omitempty" url:"fields,omitempty"` // 设置获取的字段，多个字段间以','逗号隔开
+}
+
+func (q *QueryFields) Select(field ...string) {
+	q.Fields = strings.Join(field, ",")
 }
 
 func (q *QueryFields) WhereCreatedGt(t time.Time) {

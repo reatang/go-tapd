@@ -29,16 +29,16 @@ type GetReleasesRequest struct {
 }
 
 type ReleaseData struct {
-	ID          string          `json:"id"`           // 发布计划的唯一标识符
-	WorkspaceID string          `json:"workspace_id"` // 工作空间ID
-	Name        string          `json:"name"`         // 发布计划的名称
-	Description string          `json:"description"`  // 发布计划的描述
-	StartDate   jsondt.Date     `json:"startdate"`    // 发布计划的开始日期
-	EndDate     jsondt.Date     `json:"enddate"`      // 发布计划的结束日期
-	Creator     string          `json:"creator"`      // 发布计划的创建者
-	Created     jsondt.DateTime `json:"created"`      // 发布计划的创建时间
-	Modified    jsondt.DateTime `json:"modified"`     // 发布计划的最后修改时间
-	Status      string          `json:"status"`       // 发布计划的状态
+	ID          string           `json:"id,omitempty"`           // 发布计划的唯一标识符
+	WorkspaceID string           `json:"workspace_id,omitempty"` // 工作空间ID
+	Name        string           `json:"name,omitempty"`         // 发布计划的名称
+	Description string           `json:"description,omitempty"`  // 发布计划的描述
+	StartDate   *jsondt.Date     `json:"startdate,omitempty"`    // 发布计划的开始日期
+	EndDate     *jsondt.Date     `json:"enddate,omitempty"`      // 发布计划的结束日期
+	Creator     string           `json:"creator,omitempty"`      // 发布计划的创建者
+	Created     *jsondt.DateTime `json:"created,omitempty"`      // 发布计划的创建时间
+	Modified    *jsondt.DateTime `json:"modified,omitempty"`     // 发布计划的最后修改时间
+	Status      string           `json:"status,omitempty"`       // 发布计划的状态
 }
 
 type GetReleaseResponse struct {

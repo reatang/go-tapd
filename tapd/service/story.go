@@ -55,41 +55,41 @@ type GetStoriesRequest struct {
 }
 
 type StoryData struct {
-	ID              string          `json:"id"`
-	WorkitemTypeID  string          `json:"workitem_type_id"`
-	Name            string          `json:"name"`
-	Description     string          `json:"description,omitempty"`
-	WorkspaceID     string          `json:"workspace_id"`
-	Creator         string          `json:"creator"`
-	Created         jsondt.DateTime `json:"created"`
-	Modified        jsondt.DateTime `json:"modified"`
-	Status          string          `json:"status"`
-	Owner           string          `json:"owner"`
-	CC              string          `json:"cc,omitempty"`
-	Begin           jsondt.Date     `json:"begin"`
-	Due             jsondt.Date     `json:"due"`
-	Size            string          `json:"size,omitempty"`
-	Priority        string          `json:"priority,omitempty"`
-	Developer       string          `json:"developer,omitempty"`
-	IterationID     string          `json:"iteration_id"`
-	TestFocus       string          `json:"test_focus,omitempty"`
-	Type            string          `json:"type,omitempty"`
-	Source          string          `json:"source,omitempty"`
-	Module          string          `json:"module,omitempty"`
-	Version         string          `json:"version,omitempty"`
-	Completed       jsondt.DateTime `json:"completed,omitempty"`
-	CategoryID      string          `json:"category_id"`
-	Path            string          `json:"path"`
-	ParentID        string          `json:"parent_id"`
-	ChildrenID      string          `json:"children_id"`
-	AncestorID      string          `json:"ancestor_id"`
-	BusinessValue   string          `json:"business_value,omitempty"`
-	Effort          string          `json:"effort"`
-	EffortCompleted string          `json:"effort_completed"`
-	Exceed          string          `json:"exceed"`
-	Remain          string          `json:"remain"`
-	ReleaseID       string          `json:"release_id"`
-	Label           string          `json:"label,omitempty"`
+	ID              string           `json:"id,omitempty"`               // uint64
+	WorkitemTypeID  string           `json:"workitem_type_id,omitempty"` // uint64
+	Name            string           `json:"name,omitempty"`
+	Description     string           `json:"description,omitempty"`
+	WorkspaceID     string           `json:"workspace_id,omitempty"` // uint64
+	Creator         string           `json:"creator,omitempty"`
+	Created         *jsondt.DateTime `json:"created,omitempty"`
+	Modified        *jsondt.DateTime `json:"modified,omitempty"`
+	Status          string           `json:"status,omitempty"`
+	Owner           string           `json:"owner,omitempty"`
+	CC              string           `json:"cc,omitempty"`
+	Begin           *jsondt.Date     `json:"begin,omitempty"`
+	Due             *jsondt.Date     `json:"due,omitempty"`
+	Size            string           `json:"size,omitempty"`
+	Priority        string           `json:"priority,omitempty"`
+	Developer       string           `json:"developer,omitempty"`
+	IterationID     string           `json:"iteration_id,omitempty"` // uint64 or ""
+	TestFocus       string           `json:"test_focus,omitempty"`
+	Type            string           `json:"type,omitempty"`
+	Source          string           `json:"source,omitempty"`
+	Module          string           `json:"module,omitempty"`
+	Version         string           `json:"version,omitempty"`
+	Completed       *jsondt.DateTime `json:"completed,omitempty"`
+	CategoryID      string           `json:"category_id,omitempty"` // uint64 or ""
+	Path            string           `json:"path,omitempty"`        // id::id:
+	ParentID        string           `json:"parent_id,omitempty"`   // uint64 or == AncestorID
+	ChildrenID      string           `json:"children_id,omitempty"` // ||id|id
+	AncestorID      string           `json:"ancestor_id,omitempty"` // uint64
+	BusinessValue   string           `json:"business_value,omitempty"`
+	Effort          string           `json:"effort,omitempty"`
+	EffortCompleted string           `json:"effort_completed,omitempty"`
+	Exceed          string           `json:"exceed,omitempty"`
+	Remain          string           `json:"remain,omitempty"`
+	ReleaseID       string           `json:"release_id,omitempty"`
+	Label           string           `json:"label,omitempty"`
 }
 
 type GetStoriesResponse struct {

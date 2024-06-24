@@ -22,11 +22,10 @@ type GetIterationsRequest struct {
 
 	ID             any    `json:"id,omitempty" url:"id,omitempty"`                             // 支持多ID查询
 	Name           string `json:"name,omitempty" url:"name,omitempty"`                         // 标题，支持模糊匹配
-	WorkspaceID    int    `json:"workspace_id" url:"workspace_id"`                             // 项目ID，必选
 	Description    string `json:"description,omitempty" url:"description,omitempty"`           // 详细描述
 	StartDate      string `json:"startdate,omitempty" url:"startdate,omitempty"`               // 开始时间，支持时间查询
 	EndDate        string `json:"enddate,omitempty" url:"enddate,omitempty"`                   // 结束时间，支持时间查询
-	WorkitemTypeID int    `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"` // 迭代类别
+	WorkItemTypeID int    `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"` // 迭代类别
 	PlanAppID      int    `json:"plan_app_id,omitempty" url:"plan_app_id,omitempty"`           // 计划应用ID
 	Status         string `json:"status,omitempty" url:"status,omitempty"`                     // 状态（系统状态open/done，自定义状态可传中文）
 	Creator        string `json:"creator,omitempty" url:"creator,omitempty"`                   // 创建人
@@ -34,18 +33,18 @@ type GetIterationsRequest struct {
 }
 
 type IterationData struct {
-	ID          string           `json:"id"`           // 迭代ID
-	Name        string           `json:"name"`         // 迭代名称
-	WorkspaceID string           `json:"workspace_id"` // 项目ID
-	StartDate   string           `json:"startdate"`    // 开始时间
-	EndDate     string           `json:"enddate"`      // 结束时间
-	Status      string           `json:"status"`       // 状态
-	ReleaseID   string           `json:"release_id"`   // 发布ID，可能为空
-	Description string           `json:"description"`  // 描述
-	Creator     string           `json:"creator"`      // 创建人
-	Created     *jsondt.DateTime `json:"created"`      // 创建时间
-	Modified    *jsondt.DateTime `json:"modified"`     // 修改时间
-	Completed   *jsondt.DateTime `json:"completed"`    // 完成时间，可能为空
+	ID          string           `json:"id,omitempty"`           // 迭代ID
+	Name        string           `json:"name,omitempty"`         // 迭代名称
+	WorkspaceID string           `json:"workspace_id,omitempty"` // 项目ID
+	StartDate   string           `json:"startdate,omitempty"`    // 开始时间
+	EndDate     string           `json:"enddate,omitempty"`      // 结束时间
+	Status      string           `json:"status,omitempty"`       // 状态
+	ReleaseID   string           `json:"release_id,omitempty"`   // 发布ID，可能为空
+	Description string           `json:"description,omitempty"`  // 描述
+	Creator     string           `json:"creator,omitempty"`      // 创建人
+	Created     *jsondt.DateTime `json:"created,omitempty"`      // 创建时间
+	Modified    *jsondt.DateTime `json:"modified,omitempty"`     // 修改时间
+	Completed   *jsondt.DateTime `json:"completed,omitempty"`    // 完成时间，可能为空
 }
 
 type GetIterationsResponse struct {

@@ -57,40 +57,40 @@ type QueryTaskCustomFields struct {
 }
 
 type TaskData struct {
-	ID               string           `json:"id"`
-	Name             string           `json:"name"`
-	Description      string           `json:"description"`
-	WorkspaceID      string           `json:"workspace_id"`
-	Creator          string           `json:"creator"`
-	Created          jsondt.DateTime  `json:"created"`
-	Modified         jsondt.DateTime  `json:"modified"`
-	Status           string           `json:"status"`
-	Owner            string           `json:"owner"`
-	CC               string           `json:"cc"`
-	Begin            *jsondt.Date     `json:"begin"`
-	Due              *jsondt.Date     `json:"due"`
-	StoryID          string           `json:"story_id"`
-	IterationID      string           `json:"iteration_id"`
-	Priority         string           `json:"priority"`
-	Progress         string           `json:"progress"`
-	Completed        *jsondt.DateTime `json:"completed"`
-	EffortCompleted  string           `json:"effort_completed"`
-	Exceed           string           `json:"exceed"`
-	Remain           string           `json:"remain"`
-	Effort           string           `json:"effort"`
-	HasAttachment    string           `json:"has_attachment"`
-	ReleaseID        string           `json:"release_id"`
-	Label            *string          `json:"label"`
-	CustomFieldOne   *string          `json:"custom_field_one"`
-	CustomFieldTwo   *string          `json:"custom_field_two"`
-	CustomFieldThree *string          `json:"custom_field_three"`
-	CustomFieldFour  *string          `json:"custom_field_four"`
-	CustomFieldFive  *string          `json:"custom_field_five"`
-	CustomFieldSix   *string          `json:"custom_field_six"`
-	CustomFieldSeven *string          `json:"custom_field_seven"`
-	CustomFieldEight *string          `json:"custom_field_eight"`
-	CustomField9     *string          `json:"custom_field_9"`
-	CustomField10    *string          `json:"custom_field_10"`
+	ID               string           `json:"id,omitempty"` // uint64
+	Name             string           `json:"name,omitempty"`
+	Description      string           `json:"description,omitempty"`
+	WorkspaceID      string           `json:"workspace_id,omitempty"` // uint64
+	Creator          string           `json:"creator,omitempty"`
+	Created          jsondt.DateTime  `json:"created,omitempty"`
+	Modified         jsondt.DateTime  `json:"modified,omitempty"`
+	Status           string           `json:"status,omitempty"`
+	Owner            string           `json:"owner,omitempty"`
+	CC               string           `json:"cc,omitempty"`
+	Begin            *jsondt.Date     `json:"begin,omitempty"`
+	Due              *jsondt.Date     `json:"due,omitempty"`
+	StoryID          string           `json:"story_id,omitempty"`     // uint64
+	IterationID      string           `json:"iteration_id,omitempty"` // uint64 or ""
+	Priority         string           `json:"priority,omitempty"`
+	Progress         string           `json:"progress,omitempty"`
+	Completed        *jsondt.DateTime `json:"completed,omitempty"`
+	EffortCompleted  string           `json:"effort_completed,omitempty"`
+	Exceed           string           `json:"exceed,omitempty"`
+	Remain           string           `json:"remain,omitempty"`
+	Effort           string           `json:"effort,omitempty"`
+	HasAttachment    string           `json:"has_attachment,omitempty"`
+	ReleaseID        string           `json:"release_id,omitempty"` // uint64 or ""
+	Label            *string          `json:"label,omitempty"`
+	CustomFieldOne   *string          `json:"custom_field_one,omitempty"`
+	CustomFieldTwo   *string          `json:"custom_field_two,omitempty"`
+	CustomFieldThree *string          `json:"custom_field_three,omitempty"`
+	CustomFieldFour  *string          `json:"custom_field_four,omitempty"`
+	CustomFieldFive  *string          `json:"custom_field_five,omitempty"`
+	CustomFieldSix   *string          `json:"custom_field_six,omitempty"`
+	CustomFieldSeven *string          `json:"custom_field_seven,omitempty"`
+	CustomFieldEight *string          `json:"custom_field_eight,omitempty"`
+	CustomField9     *string          `json:"custom_field_9,omitempty"`
+	CustomField10    *string          `json:"custom_field_10,omitempty"`
 }
 
 type GetTaskResponse struct {

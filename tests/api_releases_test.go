@@ -19,6 +19,7 @@ func TestReleases_GetReleases(t *testing.T) {
 	}
 	req.OrderByModifiedDesc()
 	req.WhereModifiedGt(time.Date(2024, 06, 13, 0, 0, 0, 0, time.Local))
+	req.Select("workspace_id", "name", "modified")
 
 	resp, err := c.Releases.GetReleases(context.Background(), req)
 	if err != nil {
@@ -27,7 +28,7 @@ func TestReleases_GetReleases(t *testing.T) {
 	}
 
 	for _, datum := range resp.Data {
-		fmt.Println(datum.Release.Modified)
+		fmt.Println(datum.Release.Name, datum.Release.Modified)
 	}
 }
 
