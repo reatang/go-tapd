@@ -17,17 +17,15 @@ func NewReleases(cmd Cmdable) *Releases {
 
 type GetReleasesRequest struct {
 	BaseRequest
-	QueryRequest
+	QueryFields
 
-	ID          int             `json:"id,omitempty" url:"id,omitempty"`                   // 支持多ID查询
-	Name        string          `json:"name,omitempty" url:"name,omitempty"`               // 标题，支持模糊匹配
-	Description string          `json:"description,omitempty" url:"description,omitempty"` // 详细描述
-	StartDate   jsondt.Date     `json:"startdate,omitempty" url:"startdate,omitempty"`     // 开始时间
-	EndDate     jsondt.Date     `json:"enddate,omitempty" url:"enddate,omitempty"`         // 结束时间
-	Creator     string          `json:"creator,omitempty" url:"creator,omitempty"`         // 创建人
-	Created     jsondt.DateTime `json:"created,omitempty" url:"created,omitempty"`         // 创建时间，支持时间查询
-	Modified    jsondt.DateTime `json:"modified,omitempty" url:"modified,omitempty"`       // 最后修改时间，支持时间查询
-	Status      string          `json:"status,omitempty" url:"status,omitempty"`           // 状态，枚举值为 'done' 或 'open'
+	ID          any    `json:"id,omitempty" url:"id,omitempty"`                   // 支持多ID查询
+	Name        string `json:"name,omitempty" url:"name,omitempty"`               // 标题，支持模糊匹配
+	Description string `json:"description,omitempty" url:"description,omitempty"` // 详细描述
+	StartDate   string `json:"startdate,omitempty" url:"startdate,omitempty"`     // 开始时间
+	EndDate     string `json:"enddate,omitempty" url:"enddate,omitempty"`         // 结束时间
+	Creator     string `json:"creator,omitempty" url:"creator,omitempty"`         // 创建人
+	Status      string `json:"status,omitempty" url:"status,omitempty"`           // 状态，枚举值为 'done' 或 'open'
 }
 
 type ReleaseData struct {

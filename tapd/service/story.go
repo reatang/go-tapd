@@ -17,9 +17,9 @@ func NewStory(cmd Cmdable) *Story {
 
 type GetStoriesRequest struct {
 	BaseRequest
-	QueryRequest
+	QueryFields
 
-	ID              int64   `json:"id,omitempty" url:"id,omitempty"`
+	ID              any     `json:"id,omitempty" url:"id,omitempty"`
 	Name            string  `json:"name,omitempty" url:"name,omitempty"`
 	Priority        string  `json:"priority,omitempty" url:"priority,omitempty"`
 	BusinessValue   int     `json:"business_value,omitempty" url:"business_value,omitempty"`
@@ -39,8 +39,6 @@ type GetStoriesRequest struct {
 	Developer       string  `json:"developer,omitempty" url:"developer,omitempty"`
 	Begin           string  `json:"begin,omitempty" url:"begin,omitempty"`
 	Due             string  `json:"due,omitempty" url:"due,omitempty"`
-	Created         string  `json:"created,omitempty" url:"created,omitempty"`
-	Modified        string  `json:"modified,omitempty" url:"modified,omitempty"`
 	Completed       string  `json:"completed,omitempty" url:"completed,omitempty"`
 	IterationID     string  `json:"iteration_id,omitempty" url:"iteration_id,omitempty"`
 	Effort          string  `json:"effort,omitempty" url:"effort,omitempty"`

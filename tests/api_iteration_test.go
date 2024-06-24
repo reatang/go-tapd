@@ -8,10 +8,9 @@ import (
 	"github.com/reatang/go-tapd/tapd/service"
 )
 
-func TestStory_GetStories(t *testing.T) {
+func TestIteration_GetIteration(t *testing.T) {
 	c := getClient()
-
-	resp, err := c.Story.GetStories(context.Background(), &service.GetStoriesRequest{
+	resp, err := c.Iteration.GetIterations(context.Background(), &service.GetIterationsRequest{
 		QueryFields: service.QueryFields{
 			Order: "modified desc",
 			Limit: 10,
@@ -23,14 +22,13 @@ func TestStory_GetStories(t *testing.T) {
 	}
 
 	for _, datum := range resp.Data {
-		fmt.Println(datum.Story.Name)
+		fmt.Println(datum.Iteration.Name)
 	}
 }
 
-func TestStory_GetStoriesCount(t *testing.T) {
+func TestIteration_GetIterationCount(t *testing.T) {
 	c := getClient()
-
-	resp, err := c.Story.GetStoriesCount(context.Background(), &service.GetStoriesRequest{})
+	resp, err := c.Iteration.GetIterationsCount(context.Background(), &service.GetIterationsRequest{})
 	if err != nil {
 		t.Fatal(err)
 		return
