@@ -27,7 +27,7 @@ type GetStoriesRequest struct {
 	VStatus         string  `json:"v_status,omitempty" url:"v_status,omitempty"`
 	WithVStatus     string  `json:"with_v_status,omitempty" url:"with_v_status,omitempty"`
 	Label           string  `json:"label,omitempty" url:"label,omitempty"`
-	WorkitemTypeID  any     `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"`
+	WorkItemTypeID  any     `json:"workitem_type_id,omitempty" url:"workitem_type_id,omitempty"`
 	Version         string  `json:"version,omitempty" url:"version,omitempty"`
 	Module          string  `json:"module,omitempty" url:"module,omitempty"`
 	Feature         string  `json:"feature,omitempty" url:"feature,omitempty"`
@@ -56,7 +56,7 @@ type GetStoriesRequest struct {
 
 type StoryData struct {
 	ID              string           `json:"id,omitempty"`               // uint64
-	WorkitemTypeID  string           `json:"workitem_type_id,omitempty"` // uint64
+	WorkItemTypeID  string           `json:"workitem_type_id,omitempty"` // uint64
 	Name            string           `json:"name,omitempty"`
 	Description     string           `json:"description,omitempty"`
 	WorkspaceID     string           `json:"workspace_id,omitempty"` // uint64
