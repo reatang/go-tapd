@@ -122,3 +122,88 @@ func (r *Story) GetStoriesCount(ctx context.Context, req *GetStoriesRequest) (*C
 
 	return resp, nil
 }
+
+// GetStoryCategories
+// Doc: https://open.tapd.cn/document/api-doc/API文档/api_reference/story/get_story_categories.html
+func (r *Story) GetStoryCategories(ctx context.Context, req *GetStoryCategoriesRequest) (*StoryCategoriesResponse, error) {
+	resp := &StoryCategoriesResponse{}
+	err := r.cmd(ctx, http.MethodGet, "story_categories", req, resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+// GetStoryCategoriesRequest represents the request for fetching story categories.
+type GetStoryCategoriesRequest struct {
+	BaseRequest
+	QueryFields
+
+	ID          int    `url:"id,omitempty"`
+	Name        string `url:"name,omitempty"`        // 需求分类名称, 支持模犊匹配
+	Description string `url:"description,omitempty"` // 需求分类描述
+	ParentID    int    `url:"parent_id,omitempty"`   // 父分类ID
+}
+
+// StoryCategoriesResponse represents the response from fetching story categories.
+type CategoryData struct {
+	ID          string `json:"id"`
+	WorkspaceID string `json:"workspace_id"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	ParentID    string `json:"parent_id"`
+	Created     string `json:"created"`
+	Modified    string `json:"modified"`
+}
+
+type StoryCategoriesResponse struct {
+	Status int `json:"status"`
+	Data   []struct {
+		Category CategoryData `json:"Category"`
+	} `json:"data"`
+	Info string `json:"info"`
+}
+
+// GetStoryCategoriesCount
+// Doc: https://open.tapd.cn/document/api-doc/API文档/api_reference/story/get_story_categories_count.html
+func (r *Story) GetStoryCategoriesCount(ctx context.Context, req *GetStoryCategoriesRequest) (*CountResponse, error) {
+	resp := &CountResponse{}
+	err := r.cmd(ctx, http.MethodGet, "story_categories/count", req, resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+// GetStoryRelatedBugsRequest represents the request for fetching story related bugs.
+type GetStoryRelatedBugsRequest struct {
+	BaseRequest
+
+	StoryID int `url:"story_id"` // 需求ID
+}
+
+type StoryRelatedBugsData struct {
+	WorkspaceID string `json:"workspace_id"`
+	BugID       string `json:"bug_id"`
+	StoryID     string `json:"story_id"`
+}
+
+// GetStoryRelatedBugsResponse represents the response from fetching story related bugs.
+type GetStoryRelatedBugsResponse struct {
+	BaseResponse
+	Data []StoryRelatedBugsData `json:"data"`
+}
+
+// GetStoryRelatedBugs fetches bugs related to a story.
+// Doc: https://open.tapd.cn/document/api-doc/API文档/api_reference/story/get_story_related_bugs.html
+func (r *Story) GetStoryRelatedBugs(ctx context.Context, req *GetStoryRelatedBugsRequest) (*GetStoryRelatedBugsResponse, error) {
+	resp := &GetStoryRelatedBugsResponse{}
+	err := r.cmd(ctx, http.MethodGet, "stories/get_related_bugs", req, resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
