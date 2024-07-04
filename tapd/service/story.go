@@ -146,7 +146,6 @@ type GetStoryCategoriesRequest struct {
 	ParentID    int    `url:"parent_id,omitempty"`   // 父分类ID
 }
 
-// StoryCategoriesResponse represents the response from fetching story categories.
 type CategoryData struct {
 	ID          string `json:"id"`
 	WorkspaceID string `json:"workspace_id"`
@@ -157,6 +156,7 @@ type CategoryData struct {
 	Modified    string `json:"modified"`
 }
 
+// StoryCategoriesResponse represents the response from fetching story categories.
 type StoryCategoriesResponse struct {
 	Status int `json:"status"`
 	Data   []struct {
